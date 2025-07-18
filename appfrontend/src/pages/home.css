@@ -1,0 +1,55 @@
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.8;
+  flex: 1;
+}
+
+.video-overlay-content {
+ position: relative;
+ z-index: 1;
+ text-align: center;
+ color: white;
+ padding: 2rem;
+}
+
+
+.homepg-heading {
+ font-size: 4rem;
+ font-weight: 800;
+ margin-bottom: 80px;
+}
+
+
+.homepg-button {
+ padding: 14px 28px;
+ font-size: 1.1rem;
+ background-color: #0dcaf0;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+}
+
+
+.homepg-button:hover {
+ background-color: #0bb4d4;
+}
+
+.video-body-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%; /* important for Routes layout */
+}
+
+
+

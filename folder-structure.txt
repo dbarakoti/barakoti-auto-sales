@@ -1,0 +1,90 @@
+.
+├── appfrontend
+│   ├── README.md
+│   ├── node_modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   └── src
+├── barakotiauto
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── asgi.py
+│   ├── main.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+├── folder-structure.txt
+├── inventories
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   ├── models.py
+│   ├── serializers.py
+│   ├── templates
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── node_modules
+│   ├── @babel
+│   ├── @popperjs
+│   ├── @react-aria
+│   ├── @restart
+│   ├── @swc
+│   ├── @types
+│   ├── asynckit
+│   ├── axios
+│   ├── bootstrap
+│   ├── call-bind-apply-helpers
+│   ├── classnames
+│   ├── combined-stream
+│   ├── cookie
+│   ├── csstype
+│   ├── delayed-stream
+│   ├── dequal
+│   ├── dom-helpers
+│   ├── dunder-proto
+│   ├── es-define-property
+│   ├── es-errors
+│   ├── es-object-atoms
+│   ├── es-set-tostringtag
+│   ├── follow-redirects
+│   ├── form-data
+│   ├── function-bind
+│   ├── get-intrinsic
+│   ├── get-proto
+│   ├── gopd
+│   ├── has-symbols
+│   ├── has-tostringtag
+│   ├── hasown
+│   ├── invariant
+│   ├── js-tokens
+│   ├── loose-envify
+│   ├── math-intrinsics
+│   ├── mime-db
+│   ├── mime-types
+│   ├── object-assign
+│   ├── prop-types
+│   ├── prop-types-extra
+│   ├── proxy-from-env
+│   ├── react
+│   ├── react-bootstrap
+│   ├── react-dom
+│   ├── react-is
+│   ├── react-lifecycles-compat
+│   ├── react-router
+│   ├── react-router-dom
+│   ├── react-transition-group
+│   ├── scheduler
+│   ├── set-cookie-parser
+│   ├── tslib
+│   ├── uncontrollable
+│   └── warning
+├── package-lock.json
+└── package.json
+
+66 directories, 22 files

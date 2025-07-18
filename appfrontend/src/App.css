@@ -1,0 +1,40 @@
+html, body, #root, .app-container{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #121212;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.slim-navbar {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  min-height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo-img {
+  height: 110px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+
+.video-body-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* This is to allow footer to stay at the bottom if there ar no/less content in the body */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
