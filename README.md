@@ -1,3 +1,4 @@
+
 # 🚗 Barakoti Auto Sales
 
 A modern full-stack car dealership web application built with React and Django, featuring live inventory listings, image galleries, and a sleek, responsive design.
@@ -243,4 +244,6 @@ SOFTWARE.
 ## 💬 Contact
 
 For questions or feedback, contact **Dipesh Barakoti** at [dbarakoti@gmail.com](mailto\:dbarakoti@gmail.com).
+
+
 
