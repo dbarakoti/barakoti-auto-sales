@@ -1,10 +1,11 @@
 from django.core.management.base import BaseCommand
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
+        User = get_user_model()
         if not User.objects.filter(username='admin').exists():
-            User.objects.create_superuser('admin', 'admin@example.com', 'your_secure_password')
-            self.stdout.write('Superuser created.')
+            User.objects.create_superuser('admin', 'admin@example.com', 'SecurePass123!')
+            self.stdout.write(self.style.SUCCESS('Superuser created.'))
         else:
-            self.stdout.write('Superuser already exists.')
+            self.stdout.write(self.style.WARNING('Superuser already exists.'))
