@@ -4,7 +4,6 @@ from .models import Inventory
 from .serializers import InventorySerializer
 from django.shortcuts import redirect
 
-
 def root_redirect_view(request):
     return redirect('/api/inventories/')
 
