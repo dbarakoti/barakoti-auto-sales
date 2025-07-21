@@ -5,7 +5,7 @@ from .serializers import InventorySerializer
 from django.shortcuts import redirect
 
 def root_redirect_view(request):
-    return redirect('/api/inventories/')
+    return redirect('/api/inventory/')
 
 class InventoryListView(ListAPIView):
     queryset = Inventory.objects.all()
