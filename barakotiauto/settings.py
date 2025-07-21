@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-!_jhn3m1(h=1_w%p1nh(tbyn2^-4loy363zg9x77fj49*aydv4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['your-render-subdomain.onrender.com']
+ALLOWED_HOSTS = ['barakoti-auto-backend.onrender.com']
 
 
 # Application definition
