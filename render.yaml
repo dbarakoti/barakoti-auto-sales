@@ -5,8 +5,8 @@ services:
     env: python
     plan: free
     buildCommand: "./build.sh"
-    #startCommand: "gunicorn barakotiauto.wsgi:application"
-    startCommand: "python manage.py createsu && gunicorn barakotiauto.wsgi:application"
+    startCommand: "gunicorn barakotiauto.wsgi:application"
+
 
     envVars:
       - key: DATABASE_URL
