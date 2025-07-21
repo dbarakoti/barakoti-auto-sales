@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
+from django.shortcuts import redirect
 
-def index(request):
-    return HttpResponse("✅ Barakoti Auto Backend is Live!")
+def root_redirect_view(request):
+    return redirect('/api/inventories/')
 
 urlpatterns = [
-    path('', index),
+    path('', root_redirect_view),
     path('admin/', admin.site.urls),
     path('api/', include('inventories.urls')),
 ]
