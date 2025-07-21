@@ -8,7 +8,6 @@ def root_redirect_view(request):
     return redirect('/api/inventories/')
 
 
-
 class InventoryListView(ListAPIView):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
