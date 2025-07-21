@@ -3,6 +3,6 @@ from .views import InventoryListView, InventoryDetailView
 
 
 urlpatterns = [
-    path('inventory/', InventoryListView.as_view(), name='inventory-list'),
-    path('inventory/<int:pk>/', InventoryDetailView.as_view(), name='inventory-detail'),
+    path('inventories/', InventoryListView.as_view(), name='inventory-list'),
+    path('inventories/<int:pk>/', InventoryDetailView.as_view(), name='inventory-detail'),
 ]
