@@ -1,0 +1,1 @@
+web: gunicorn barakotiauto.wsgi
