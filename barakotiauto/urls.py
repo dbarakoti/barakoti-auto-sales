@@ -18,8 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 from inventories.views import root_redirect_view
 
-def root_redirect_view(request):
-    return redirect('/api/inventories/')
 
 urlpatterns = [
     path('', root_redirect_view),
