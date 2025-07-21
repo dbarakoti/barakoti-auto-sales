@@ -2,7 +2,6 @@ from decouple import config
 import os
 import dj_database_url
 
-
 """
 Django settings for barakotiauto project.
 
@@ -20,7 +19,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -31,7 +29,6 @@ SECRET_KEY = 'django-insecure-!_jhn3m1(h=1_w%p1nh(tbyn2^-4loy363zg9x77fj49*aydv4
 DEBUG = False
 
 ALLOWED_HOSTS = ['barakoti-auto-backend.onrender.com']
-
 
 # Application definition
 
@@ -79,27 +76,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'barakotiauto.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool, default=True)
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -119,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -131,13 +118,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
 
 from pathlib import Path
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATICFILES_DIRS = [
