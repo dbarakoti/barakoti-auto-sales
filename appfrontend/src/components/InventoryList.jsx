@@ -7,7 +7,7 @@ const InventoryList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/inventory/')
+    axios.get('REACT_APP_API_URL/api/inventory/')
       .then(response => setInventoryList(response.data))
       .catch(error => console.error('Error fetching inventory:', error));
   }, []);
