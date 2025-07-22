@@ -5,20 +5,25 @@ import { useNavigate } from 'react-router-dom';
 const InventoryList = () => {
   const [inventoryList, setInventoryList] = useState([]);
   const navigate = useNavigate();
-  const baseUrl = process.env.REACT_APP_API_URL;// using this temporarily to for static service in render.
+  const baseUrl = process.env.REACT_APP_API_URL;
+
 
   /*
   useEffect(() => {
-    axios.get('REACT_APP_API_URL/api/inventory/')
+    axios.get('REACT_APP_API_URL/inventory/')
       .then(response => setInventoryList(response.data))
       .catch(error => console.error('Error fetching inventory:', error));
   }, []);
 */
-useEffect(() => {
-    axios.get(`${baseUrl}/api/inventory/`)
-      .then(response => setInventoryList(response.data))
-      .catch(error => console.error('Error fetching inventory:', error));
-  }, [baseUrl]);
+  useEffect(() => {
+  axios.get(`${baseUrl}/inventory/`)
+    .then(response => {
+      console.log("Fetched inventory:", response.data); // <-- Add this
+      setInventoryList(response.data);
+    })
+    .catch(error => console.error('Error fetching inventory:', error));
+}, [baseUrl]);
+
 
   return (
     <div className="row">
