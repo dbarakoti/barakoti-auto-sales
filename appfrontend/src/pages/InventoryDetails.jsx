@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import {FaShareAlt, FaPrint} from 'react-icons/fa';
+const baseUrl = process.env.REACT_APP_API_URL;
 
 
 const InventoryDetails = () => {
@@ -9,6 +10,7 @@ const InventoryDetails = () => {
     const [inventory, setInventory] = useState(null);
     const [selectedImage, setSelectedImage] = useState(null);
 
+    /*
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000/api/inventory/${id}/`)
             .then(response => {
@@ -17,6 +19,17 @@ const InventoryDetails = () => {
             })
             .catch(error => console.error('Error fetching inventory details:', error));
     }, [id]);
+*/
+
+
+    useEffect(() => {
+    axios.get(`${baseUrl}/inventory/${id}/`)
+        .then(response => {
+            setInventory(response.data);
+            setSelectedImage(response.data.image_url);
+        })
+        .catch(error => console.error('Error fetching inventory details:', error));
+}, [id]);
 
     if (!inventory) return <p>Loading...</p>;
 
