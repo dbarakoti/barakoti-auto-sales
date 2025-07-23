@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['barakoti-auto-sales.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['barakoti-auto-sales.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
