@@ -243,7 +243,7 @@ SOFTWARE.
 
 ## 💬 Contact
 
-For questions or feedback, contact **Dipesh Barakoti** at [dbarakoti@gmail.com](mailto\:dbarakoti@gmail.com).
+For questions or feedback, contact **Dipesh Barakoti** at [barakotiautosales@gmail.com](mailto\:dbarakoti@gmail.com).
 
 
 
