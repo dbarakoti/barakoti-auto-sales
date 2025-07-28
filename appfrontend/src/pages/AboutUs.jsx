@@ -3,7 +3,8 @@ import logo from '../assets/barakoti_auto_logo.png';
 
 const AboutUs = () => {
     return (
-        <div style={{position: 'relative', minHeight: '100vh', overflow: 'hidden'}}>
+
+        <div style={{position: 'relative', overflow: 'hidden'}}>
             <div
                 style={{
                     backgroundImage: `url(${logo})`,
@@ -19,8 +20,6 @@ const AboutUs = () => {
                     zIndex: 0
                 }}
             />
-
-            {/* Foreground Content */}
             <div
                 style={{
                     position: 'relative',
@@ -31,7 +30,11 @@ const AboutUs = () => {
                     margin: '0 auto',
                     color: '#777'
                 }}
+
+
             >
+
+
                 <h1>About Us</h1>
                 <p>
                     Barakoti Auto Sales is committed to providing exceptional car buying experiences. We offer
