@@ -7,7 +7,7 @@ A modern full-stack car dealership web application built with React and Django, 
 
 ## 📝 Project Overview
 
-**As of 07/17/2025**
+**As of 10/16/2025**
 
 ### 📌 Project Name:
 
@@ -30,7 +30,7 @@ The goal is to build a customer-facing app that mimics a used car shopping exper
 - Users land on a homepage with a video background and clear navigation.
 - From there, they can access the **Inventory** page to view available vehicles.
 - Selecting a vehicle reveals a **Details View** with additional images and specifications.
-- Future enhancements will include features like: inventory search, loan applications, admin dashboard in React, print/share options, and more.
+- Future enhancements will include features like: loan applications, admin dashboard in React, print/share options, and more.
 
 ---
 
@@ -160,12 +160,9 @@ BarakotiAuto
 
 ## 🚧 Future Enhancements
 
-- 🔍 Inventory search
 - 💰 Apply for financing
 - 📿 Print/share functionality
 - 🧑‍💼 React-based Admin Dashboard
-- 📞 Working Contact form
-- 📄 About Us and Careers pages with dynamic content
 
 ---
 

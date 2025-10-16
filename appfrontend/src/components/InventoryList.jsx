@@ -34,7 +34,7 @@ const InventoryList = () => {
     fetchInventory();
   }, [baseUrl, searchQuery]);
 
-  if (loading) return <p className="text-center-info mt-4">Loading inventory...</p>;
+  if (loading) return <p className="text-center text-info mt-4">Loading inventory...</p>;
   if (error) return <p className="text-center text-danger mt-4">{error}</p>;
 
   return (
