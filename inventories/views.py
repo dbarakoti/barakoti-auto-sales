@@ -1,4 +1,3 @@
-
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 from .models import Inventory
@@ -10,20 +9,45 @@ from django.core.mail import EmailMessage, get_connection
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.conf import settings
+from django.db.models import Q
+from django.http import JsonResponse
 import logging
 
 logger = logging.getLogger(__name__)
 
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
+
+
 def root_redirect_view(request):
     return redirect('/api/inventory/')
 
+
 class InventoryListView(ListAPIView):
-    queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
+
+    def get_queryset(self):
+        queryset = Inventory.objects.all()
+        search_query = self.request.GET.get('q', None)
+
+        if search_query:
+            if search_query.isdigit():
+                queryset = queryset.filter(year=int(search_query))
+            else:
+                queryset = queryset.filter(
+                    Q(make__icontains=search_query) |
+                    Q(model__icontains=search_query) |
+                    Q(date_arrived__icontains=search_query)
+                )
+
+        return queryset
+
 
 class InventoryDetailView(RetrieveAPIView):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
+
 
 class ContactUsMessageView(APIView):
     def post(self, request):
@@ -52,14 +76,14 @@ class ContactUsMessageView(APIView):
             )
 
             with get_connection(
-                host=settings.EMAIL_HOST,
-                port=settings.EMAIL_PORT,
-                username=settings.EMAIL_HOST_USER,
-                password=settings.EMAIL_HOST_PASSWORD,
-                use_tls=settings.EMAIL_USE_TLS,
-                use_ssl=settings.EMAIL_USE_SSL,
-                ssl_context=settings.EMAIL_SSL_CONTEXT,
-                fail_silently=False
+                    host=settings.EMAIL_HOST,
+                    port=settings.EMAIL_PORT,
+                    username=settings.EMAIL_HOST_USER,
+                    password=settings.EMAIL_HOST_PASSWORD,
+                    use_tls=settings.EMAIL_USE_TLS,
+                    use_ssl=settings.EMAIL_USE_SSL,
+                    ssl_context=settings.EMAIL_SSL_CONTEXT,
+                    fail_silently=False
             ) as connection:
                 email_message.connection = connection
                 email_message.send(fail_silently=False)
