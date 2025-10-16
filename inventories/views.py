@@ -1,4 +1,3 @@
-
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 from .models import Inventory
@@ -10,20 +9,38 @@ from django.core.mail import EmailMessage, get_connection
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.conf import settings
+from django.db.models import Q
 import logging
 
 logger = logging.getLogger(__name__)
 
+
 def root_redirect_view(request):
     return redirect('/api/inventory/')
 
+
 class InventoryListView(ListAPIView):
-    queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
+
+    def get_queryset(self):
+        queryset = Inventory.objects.all()
+        search_query = self.request.GET.get('q', None)
+
+        if search_query:
+            queryset = queryset.filter(
+                Q(make__icontains=search_query)
+                | Q(model__icontains=search_query)
+                | Q(year__icontains=search_query)
+                | Q(date_arrived__icontains=search_query)
+            )
+
+        return queryset
+
 
 class InventoryDetailView(RetrieveAPIView):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
+
 
 class ContactUsMessageView(APIView):
     def post(self, request):
